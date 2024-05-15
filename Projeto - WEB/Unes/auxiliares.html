@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+
+    <!-- Não é exibido o código fonte ao usuário-->
+    <head>
+        <title>Auxiliares</title>
+        <meta charset="utf-8">
+    </head>
+
+    <!-- É exibido o código fonte ao usuário-->
+    <body>
+        
+        <!-- h1 até h6 definem os tamanhos dos títulos-->
+        <h1>Sobre a página </h1>
+        <p>
+            Essa é a Página
+        </p>
+
+        <hr>
+        <h2>Sobre os textos </h2>
+        <p>
+            Esse é um texto <strong> negrito </strong><br>
+            Esse é um texto <em> itálico </em><br>
+            Esse é um texto <u> sublinhado </u><br>
+            Esse é um texto <strike> errado </strike><br>
+        </p>
+
+        <!--Lista não ordenada -->
+        <ul type="circle">
+            <!--type Define o tipo do marcador dos itens - Square, circle, disc(padrão) -->
+            <!--Lista não ordenada -->
+            <li>Notebook</li>
+            <li>Tablet</li>
+            <!--Elementos de lista -->
+        </ul>
+
+        <h2>Sobre os textos </h2>   
+        
+        <!--Lista ordenada -->
+        <ol type="A">
+            <!--type Define o tipo do marcador dos itens - 1(padrão), A, a, I, i -->
+            <li>Empresa</li>
+            <li>Responsável</li>
+        </ol>
+
+        <!--Inserir imagens, locais ou de links. Definir altura e largura -->   
+        <img src="Arquivos/Imagens/Maçã.jpg" width="100" height = "200">
+        <img src="Arquivos/Imagens/Maçã.jpg" width="100">
+        <img src="Arquivos/Imagens/Maçã.jpg" height = "200">
+        <img src="https://scfoods.fbitsstatic.net/img/p/maca-red-argentina-unidade-70942/257561.jpg?w=800&h=800&v=no-change&qs=ignore">
+
+        <a href="contato.html">
+            Clique aqui
+        </a><br>
+        <a href="https://www.google.com/">
+            Ir para Google
+        </a>
+
+        <!--------------------------------------------------->
+        <!-- Criar tabelas -->
+        <table border="1" height="200" width="100%" align="center"><!--Cria a tabela. Width define largura.-->
+            <!--Em percentual, varia conforme o o tamanho da janela (somente adicionar o % ao final)
+                widht 400 - define em 400 pixels. width 100% - define para 100% do espaço disponível
+            -->
+            <!--align - define onde colocar determinado item - left, right, center-->
+            <!--height define a altura que também pode ser percentual-->
+            <tr><!--Table Row -->
+                <th>Código</th><!--Table Header (título) -->
+                <th>Produto</th>
+                <th>Preço</th>
+            </tr>
+            <!--Próxima Linha -->
+            <tr><!--Table Row -->
+                <td>0001</td><!--Table Data -->
+                <td>
+                    <img src="Imagens/Maçã.jpg" width="100"><!-- Define imagem na tabela -->
+                </td>
+                <td>                
+                    <a href="https://www.google.com/"> <!-- Define link na tabela -->
+                        Ir para Google
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Desconto</td><!--Table Data -->
+                <td colspan="2">cupom1 - R$10,00</td>
+                <!--colspan - define o tamanho de 2 colunas para a célula  -->
+                <!--rowspan - define o tamanho de 2 linhas para a célula  -->
+            </tr>
+        </table>
+        <!--------------------------------------------------->
+
+        Itens de GUI
+        <!--Criar tela de login-->
+        <h2>Login</h2>
+        <form>
+
+            Login: <br>
+            <input type="text" name="login"><br>
+            Senha: <br>
+            <input type="password" name="senha"><br>
+            <!--types: button, submit, password, text, radio, checkbox, entre outros-->
+            <input type="button" value="Logar">
+
+        </form>
+
+        <h2>Cadastre-se</h2>
+        <form>
+            Login: <br>
+            <input type="text" name="cadastro"><br>
+            Sexo: <br>
+            <input type="radio" name="sexo" value="M"> Masculino <br>
+            <input type="radio" name="sexo" value="F"> Feminino <br>
+
+            Interesses: <br>
+            <input type="checkbox" name ="interesses"> Futebol<br>
+            <input type="checkbox" name ="interesses"> Voleibol<br>
+            <input type="checkbox" name ="interesses"> Basquetebol<br>
+
+            Estado: <br>
+            <select name="estado"><!--Select traz uma lista suspensa de seleção única-->
+                <option value="RS">RS</option>
+                <option value="SC"> SC</option>
+                <option value="PR">PR</option>
+                <option value="SP">SP</option>
+            </select><br><br>
+
+            Observações: <br>
+            <textarea cols="40" rows="20" style ="resize:none"></textarea>
+            <!--style resize: vertical, horizontal, none ou pode não aparecer-->
+            <br>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+        <!--------------------------------------------------->
+
+        <!--Caracteres Especiais - como inserí-los-->
+        <h2>Caracteres Especiais</h2>
+        <!--Procurar Entities HTML no Google - w3schools-->
+        <!--Escrever caracteres reservados-->
+        <!--<p> == &lt;p&gt;-->
+        &lt;p&gt;
+        espaço: &nbsp; <!--caso sejam digitados mais espaços, não aparecem na tela. É necessário o &nbsp-->
+
+    </body>
+
+</html>

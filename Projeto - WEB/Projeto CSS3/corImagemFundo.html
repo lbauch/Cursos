@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cor Imagem Fundo</title>
+
+    <style type ="text/css">
+
+        /*.fundo{
+            background-color: cadetblue;
+            color:white;
+        }*/
+
+        body{
+            background-image: url('Imagens/yoshi.png');
+            /*repeat - 4 opções*/
+            background-repeat: no-repeat;
+            /*fundo não rola junto com a página quando descemos a pg - scroll/fixed */
+            background-attachment: fixed;
+            background-position: center center; /*horizontal - vertical*/
+            /*left right center - bottom top center*/
+        }
+
+        .fundo{
+            background: blue url('Imagens/yoshi.png') no-repeat;
+        }
+
+    </style>
+
+</head>
+<body> 
+
+    <h1 class="fundo">Conteúdo do título 1</h1>
+
+</body>
+</html>
