@@ -1,0 +1,94 @@
+CREATE DATABASE RETIROS;
+
+USE RETIROS
+
+CREATE TABLE Retiro(
+	IDRetiro INT PRIMARY KEY AUTO_INCREMENT,
+	Retiro VARCHAR(50) NOT NULL,
+	Data_inicio DATE NOT NULL,
+	Data_termino DATE NOT NULL,
+	Cor VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Retirante(
+	IDRetirante INT PRIMARY KEY AUTO_INCREMENT,
+	Retirante VARCHAR(100) NOT NULL,
+	Sexo CHAR(1) NOT NULL
+);
+
+CREATE TABLE Relacao(
+	ID_Retiro INT NOT NULL,
+	ID_Retirante INT NOT NULL,
+	FOREIGN KEY(ID_Retiro) REFERENCES Retiro(IDRetiro),
+	FOREIGN KEY(ID_Retirante) REFERENCES Retirante(IDRetirante),
+	CONSTRAINT relacao_pk PRIMARY KEY(ID_Retiro,ID_Retirante)
+);
+
+
+INSERT INTO RETIRO (Retiro, Data_inicio, Data_termino, Cor)
+VALUES
+('1 Dnc', '2022-10-14', '2022-10-16', 'Azul'),
+('2 Dnc', '2023-10-25', '2023-10-27', 'Azul');
+
+
+INSERT INTO RETIRANTE (Retirante,Sexo)
+VALUES
+('Gabriely Adam da Maia','F'),
+('Larissa Angioletti Fonseca','F'),
+('Mariane','F'),
+('Vítor Schultz de Souza','M'),
+('Gabriel Tamasia Ramos','M'),
+('João Vitor Cechetto','M'),
+('Maycon Silva','M');
+
+INSERT INTO RETIRANTE (Retirante,Sexo)
+VALUES
+('Amabily Gabriela Marques de Moura','F'),
+('Danielly Cristine dos Santos','F'),
+('Fabiane Goldacker','F'),
+('Kamylle Vitória Lisieski','F'),
+('Maria Beatriz Trivelatto','F'),
+('Maria Eduarda Fonseca da Silva','F'),
+('Breno Wilian Vieira','M'),
+('James Araujo de Oliveira','M'),
+('João Pedro Genoin','M'),
+('Michael Jung','M');
+
+
+INSERT INTO RELACAO VALUES(1,1);
+INSERT INTO RELACAO VALUES(1,2);
+INSERT INTO RELACAO VALUES(1,3);
+INSERT INTO RELACAO VALUES(1,4);
+INSERT INTO RELACAO VALUES(1,5);
+INSERT INTO RELACAO VALUES(1,6);
+INSERT INTO RELACAO VALUES(1,7);
+
+INSERT INTO RELACAO VALUES(2,8);
+INSERT INTO RELACAO VALUES(2,9);
+INSERT INTO RELACAO VALUES(2,10);
+INSERT INTO RELACAO VALUES(2,11);
+INSERT INTO RELACAO VALUES(2,12);
+INSERT INTO RELACAO VALUES(2,13);
+INSERT INTO RELACAO VALUES(2,14);
+INSERT INTO RELACAO VALUES(2,15);
+INSERT INTO RELACAO VALUES(2,16);
+INSERT INTO RELACAO VALUES(2,17);
+
+
+USE RETIROS
+
+SELECT R.Retiro, R.Data_Inicio, R.Data_Termino, R.Cor, P.Retirante, P.Sexo
+FROM Retiro as R
+INNER JOIN Relacao as W
+ON R.IDRetiro = W.ID_Retiro
+INNER JOIN Retirante as P
+ON P.IDRetirante = W.ID_Retirante
+Order By R.Retiro;
+
+
+DROP DATABASE RETIROS;
+
+DROP TABLE RETIRO;
+DROP TABLE RETIRANTE;
+DROP TABLE RELACAO;
+
